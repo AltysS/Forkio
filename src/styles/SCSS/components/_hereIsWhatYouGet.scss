@@ -1,0 +1,95 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.hereIsWhatYouGet {
+  text-align: center;
+  //   display: grid;
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: $btnAndTitleColor;
+    margin-bottom: 36px;
+    grid-area: title;
+    & > p {
+      @media (min-width: 350px) {
+        @include display(inline);
+      }
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    margin-bottom: 27px;
+  }
+  &__title-name {
+    font-size: 16px;
+    line-height: 16px;
+    color: $whatYouGetName;
+    margin-bottom: 14px;
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 21px;
+    color: $whatYouGetDescription;
+    margin-bottom: 40px;
+  }
+  &__code-img {
+    grid-area: codeImg;
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: $min-tablet-width) {
+  .hereIsWhatYouGet {
+    &__title {
+      font-size: 42px;
+      line-height: 44px;
+    }
+    &__description {
+      flex-direction: row;
+      gap: 23px;
+      text-align: start;
+    }
+  }
+}
+@media (min-width: $min-pc-width) {
+  .hereIsWhatYouGet-wrapper {
+    background-color: #f4f4f4;
+    padding-top: 100px;
+    padding-bottom: 33px;
+  }
+  .hereIsWhatYouGet {
+    display: grid;
+    // grid-template-rows: repeat(2, 1fr);
+    column-gap: 50px;
+    grid-template-areas:
+      "desc1 title"
+      "desc2 codeImg"
+      "desc3 codeImg"
+      "desc4 codeImg";
+    &__title {
+      font-size: 43px;
+      line-height: 50px;
+    }
+  }
+  .descriptionOne {
+    grid-area: desc1;
+  }
+  .descriptionTwo {
+    grid-area: desc2;
+  }
+  .descriptionThree {
+    grid-area: desc3;
+  }
+  .descriptionFour {
+    grid-area: desc4;
+  }
+}

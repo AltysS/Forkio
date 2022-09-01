@@ -1,0 +1,74 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+.revolutionaryEditor {
+  padding-top: 130px;
+  padding-bottom: 98px;
+  text-align: center;
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #635c73;
+    margin-bottom: 27px;
+  }
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #323232;
+    margin-bottom: 36px;
+    font-family: "Lato", sans-serif;
+  }
+  &__bar-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__bar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background-color: #f6f8fa;
+    border: 2px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f6f8fa;
+    & > svg {
+      margin-right: 8px;
+      margin-left: 10px;
+    }
+    & > span {
+      margin-left: 8px;
+      padding: 0.5em 0.75em;
+      background-color: #ffffff;
+    }
+  }
+}
+
+@media (min-width: $min-tablet-width) {
+  .revolutionaryEditor {
+    &__bar-wrapper {
+      width: auto;
+      gap: 5px;
+    }
+  }
+}
+
+@media (min-width: $min-pc-width) {
+  .revolutionaryEditor {
+    &__description {
+      margin-right: 250px;
+      margin-left: 250px;
+    }
+  }
+}
